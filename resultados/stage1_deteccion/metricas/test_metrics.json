@@ -1,0 +1,20 @@
+{
+  "split": "test",
+  "imgsz": 640,
+  "model": "yolov8n.pt",
+  "best_weights": "data\\mini3_detector_python_v3\\artifacts\\yolo\\run02_60ep\\weights\\best.pt",
+  "mAP50": 0.38787481141377167,
+  "mAP50_95": 0.2031156062200179,
+  "precision": 0.7600874645007111,
+  "recall": 0.391372642155409,
+  "per_class": {
+    "interference": {
+      "mAP50": 0.20104272394131456,
+      "mAP50_95": 0.05776737725404738
+    },
+    "drone": {
+      "mAP50": 0.5747068988862287,
+      "mAP50_95": 0.34846383518598845
+    }
+  }
+}

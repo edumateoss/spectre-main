@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\TFG\\\\spectre-main\\\\spectre-main\\\\figuras\" -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object FullName, Length | Sort-Object FullName)",
+      "PowerShell(Get-ChildItem \"C:\\\\TFG\\\\spectre-main\\\\spectre-main\\\\memoria_yolo\\\\figuras\" -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object FullName, Length | Sort-Object FullName)",
+      "PowerShell(Get-ChildItem \"C:\\\\TFG\\\\spectre-main\\\\spectre-main\\\\data\\\\stage2_classifier_v2_mavic_split\\\\artifacts\" -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object FullName, Length | Sort-Object FullName)",
+      "Bash(dir \"C:\\\\TFG\\\\spectre-main\\\\spectre-main\")"
+    ]
+  }
+}

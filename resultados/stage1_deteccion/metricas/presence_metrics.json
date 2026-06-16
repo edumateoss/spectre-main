@@ -1,0 +1,912 @@
+{
+  "sweep_conf": [
+    0.1,
+    0.25,
+    0.4,
+    0.5
+  ],
+  "sweep_min_drone_bursts": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "metrics": [
+    {
+      "conf_threshold": 0.1,
+      "min_drone_bursts": 1,
+      "counts": {
+        "TP": 297,
+        "FP": 0,
+        "TN": 300,
+        "FN": 3
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.995,
+      "precision": 1.0,
+      "recall": 0.99,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.995,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 147,
+          "pct_pred_present": 98.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.1,
+      "min_drone_bursts": 2,
+      "counts": {
+        "TP": 286,
+        "FP": 0,
+        "TN": 300,
+        "FN": 14
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.9767,
+      "precision": 1.0,
+      "recall": 0.9533,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.9761,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 136,
+          "pct_pred_present": 90.67,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.1,
+      "min_drone_bursts": 3,
+      "counts": {
+        "TP": 273,
+        "FP": 0,
+        "TN": 300,
+        "FN": 27
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.955,
+      "precision": 1.0,
+      "recall": 0.91,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.9529,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 123,
+          "pct_pred_present": 82.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.1,
+      "min_drone_bursts": 4,
+      "counts": {
+        "TP": 267,
+        "FP": 0,
+        "TN": 300,
+        "FN": 33
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.945,
+      "precision": 1.0,
+      "recall": 0.89,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.9418,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 117,
+          "pct_pred_present": 78.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.25,
+      "min_drone_bursts": 1,
+      "counts": {
+        "TP": 267,
+        "FP": 0,
+        "TN": 300,
+        "FN": 33
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.945,
+      "precision": 1.0,
+      "recall": 0.89,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.9418,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 117,
+          "pct_pred_present": 78.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.25,
+      "min_drone_bursts": 2,
+      "counts": {
+        "TP": 249,
+        "FP": 0,
+        "TN": 300,
+        "FN": 51
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.915,
+      "precision": 1.0,
+      "recall": 0.83,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.9071,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 99,
+          "pct_pred_present": 66.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.25,
+      "min_drone_bursts": 3,
+      "counts": {
+        "TP": 235,
+        "FP": 0,
+        "TN": 300,
+        "FN": 65
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.8917,
+      "precision": 1.0,
+      "recall": 0.7833,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8785,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 85,
+          "pct_pred_present": 56.67,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.25,
+      "min_drone_bursts": 4,
+      "counts": {
+        "TP": 226,
+        "FP": 0,
+        "TN": 300,
+        "FN": 74
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.8767,
+      "precision": 1.0,
+      "recall": 0.7533,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8593,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 76,
+          "pct_pred_present": 50.67,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.4,
+      "min_drone_bursts": 1,
+      "counts": {
+        "TP": 246,
+        "FP": 0,
+        "TN": 300,
+        "FN": 54
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.91,
+      "precision": 1.0,
+      "recall": 0.82,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.9011,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 96,
+          "pct_pred_present": 64.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.4,
+      "min_drone_bursts": 2,
+      "counts": {
+        "TP": 228,
+        "FP": 0,
+        "TN": 300,
+        "FN": 72
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.88,
+      "precision": 1.0,
+      "recall": 0.76,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8636,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 78,
+          "pct_pred_present": 52.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.4,
+      "min_drone_bursts": 3,
+      "counts": {
+        "TP": 215,
+        "FP": 0,
+        "TN": 300,
+        "FN": 85
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.8583,
+      "precision": 1.0,
+      "recall": 0.7167,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.835,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 65,
+          "pct_pred_present": 43.33,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.4,
+      "min_drone_bursts": 4,
+      "counts": {
+        "TP": 211,
+        "FP": 0,
+        "TN": 300,
+        "FN": 89
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.8517,
+      "precision": 1.0,
+      "recall": 0.7033,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8258,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 61,
+          "pct_pred_present": 40.67,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.5,
+      "min_drone_bursts": 1,
+      "counts": {
+        "TP": 238,
+        "FP": 0,
+        "TN": 300,
+        "FN": 62
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.8967,
+      "precision": 1.0,
+      "recall": 0.7933,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8848,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 88,
+          "pct_pred_present": 58.67,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.5,
+      "min_drone_bursts": 2,
+      "counts": {
+        "TP": 221,
+        "FP": 0,
+        "TN": 300,
+        "FN": 79
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.8683,
+      "precision": 1.0,
+      "recall": 0.7367,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8484,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 71,
+          "pct_pred_present": 47.33,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.5,
+      "min_drone_bursts": 3,
+      "counts": {
+        "TP": 207,
+        "FP": 0,
+        "TN": 300,
+        "FN": 93
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.845,
+      "precision": 1.0,
+      "recall": 0.69,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8166,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 57,
+          "pct_pred_present": 38.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    },
+    {
+      "conf_threshold": 0.5,
+      "min_drone_bursts": 4,
+      "counts": {
+        "TP": 201,
+        "FP": 0,
+        "TN": 300,
+        "FN": 99
+      },
+      "n_drone_imgs": 300,
+      "n_nodrone_imgs": 300,
+      "accuracy": 0.835,
+      "precision": 1.0,
+      "recall": 0.67,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "f1": 0.8024,
+      "per_capture": {
+        "mini3_drone_d10_w3_s02_cap01": {
+          "capture_type": "drone",
+          "distance_m": 10,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 150,
+          "pct_pred_present": 100.0,
+          "capture_confirmed": true
+        },
+        "mini3_drone_d5_w1_s01_cap01": {
+          "capture_type": "drone",
+          "distance_m": 5,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 51,
+          "pct_pred_present": 34.0,
+          "capture_confirmed": true
+        },
+        "mini3_nodrone_w1_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 1,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        },
+        "mini3_nodrone_w3_s01_cap03": {
+          "capture_type": "nodrone",
+          "distance_m": null,
+          "wifi_level": 3,
+          "n_images": 150,
+          "n_pred_present": 0,
+          "pct_pred_present": 0.0,
+          "capture_confirmed": false
+        }
+      }
+    }
+  ]
+}

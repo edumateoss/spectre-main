@@ -1,0 +1,124 @@
+% =============================================================================
+% Capitulo 7 - Anexos
+% =============================================================================
+\chapter{Material complementario}
+\label{cap:anexos}
+
+\section{Acrónimos}
+\label{anexo:acronimos}
+
+\begin{acronym}[STFTP]
+  \acro{UAV}{\emph{Unmanned Aerial Vehicle}}
+  \acro{RF}{radiofrecuencia}
+  \acro{SDR}{\emph{Software Defined Radio}}
+  \acro{IQ}{componentes en fase y cuadratura}
+  \acro{STFT}{\emph{Short-Time Fourier Transform}}
+  \acro{CNN}{\emph{Convolutional Neural Network}}
+  \acro{YOLO}{\emph{You Only Look Once}}
+  \acro{mAP}{\emph{mean Average Precision}}
+  \acro{IoU}{\emph{Intersection over Union}}
+  \acro{ISM}{\emph{Industrial, Scientific and Medical}}
+  \acro{SNR}{\emph{Signal-to-Noise Ratio}}
+  \acro{FHSS}{\emph{Frequency Hopping Spread Spectrum}}
+\end{acronym}
+
+\section{Convención de nombres de captura}
+\label{anexo:nombres}
+
+Para mantener trazabilidad se recomienda utilizar nombres de captura con campos explícitos:
+
+\begin{lstlisting}[caption={Formato recomendado de nombre de captura.}]
+<dron>_<label>_<distancia/nodrone>_<wifi_level>_<sesion>_<capNN>
+\end{lstlisting}
+
+Ejemplos:
+
+\begin{lstlisting}[caption={Ejemplos de nombres de captura.}]
+mini3_drone_d5_w1_s01_cap01
+mini3_drone_d10_w3_s02_cap01
+mini3_nodrone_w1_s01_cap03
+mini3_nodrone_w3_s01_cap03
+\end{lstlisting}
+
+En el CSV de entrenamiento, la etiqueta de captura debe normalizarse como \texttt{drone} o \texttt{interference}, aunque el nombre mantenga el prefijo \texttt{nodrone} para indicar que el dron estaba apagado.
+
+\section{Pseudocódigo del auto-etiquetado YOLO}
+\label{anexo:pseudocodigo_autolabel}
+
+\begin{lstlisting}[style=python,caption={Pseudocódigo de generación automática de cajas YOLO.}]
+for image_path in spectrograms:
+    img = read_image(image_path)
+    intensity = rgb_to_intensity(img)
+    threshold = percentile(intensity, 99.8)
+    mask = intensity > threshold
+    components = connected_components(mask)
+
+    for comp in components:
+        box = bounding_box(comp)
+        area = box.width * box.height
+
+        if area < 8:
+            continue
+        if area > 0.005 * image_width * image_height:
+            continue
+
+        class_id = class_from_capture_name(image_path)
+        write_yolo_box(image_path, class_id, box)
+\end{lstlisting}
+
+\section{Pseudocódigo del detector YOLO}
+\label{anexo:pseudocodigo_detector_yolo}
+
+\begin{lstlisting}[style=python,caption={Pseudocódigo de inferencia del detector YOLO.}]
+iq = read_iq_window(capture, duration=0.1)
+spectrogram = make_spectrogram(iq)
+detections = yolo.predict(spectrogram)
+
+for det in detections:
+    if det.confidence < threshold:
+        continue
+    if det.class_name == "drone":
+        alert = True
+        crop = crop_region(spectrogram, det.box)
+\end{lstlisting}
+
+\section{Pseudocódigo de búsqueda y confirmación}
+\label{anexo:pseudocodigo_busqueda}
+
+Una versión operativa del sistema podría recorrer varias frecuencias, generar espectrogramas cortos y bloquear la frecuencia cuando el detector confirme presencia de dron:
+
+\begin{lstlisting}[style=python,caption={Pseudocódigo de búsqueda y confirmación con YOLO.}]
+centers = [2.410e9, 2.425e9, 2.440e9, 2.455e9, 2.470e9, 2.485e9]
+
+for fc in centers:
+    tune_usrp(fc)
+    iq = capture_short(duration=0.25)
+    spec = make_spectrogram(iq)
+    detections = yolo.predict(spec)
+
+    if has_drone_detection(detections, conf=0.80):
+        iq2 = capture_short(duration=0.25)
+        spec2 = make_spectrogram(iq2)
+        detections2 = yolo.predict(spec2)
+
+        if has_drone_detection(detections2, conf=0.80):
+            lock_frequency(fc)
+            capture_long(duration=3.0)
+            break
+\end{lstlisting}
+
+\section{Pseudocódigo de identificación de modelos}
+\label{anexo:pseudocodigo_modelos}
+
+\begin{lstlisting}[style=python,caption={Pseudocódigo de clasificación multiclase como segunda etapa.}]
+spec = make_spectrogram(iq_window)
+detections = yolo.predict(spec)
+
+for det in detections:
+    if det.class_name != "drone":
+        continue
+    crop = crop_region(spec, det.box)
+    probs = model_multiclass.predict(crop)
+    model_id = argmax(probs)
+    confidence = max(probs)
+\end{lstlisting}

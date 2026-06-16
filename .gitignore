@@ -1,0 +1,48 @@
+# === Python ===
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.python-version
+
+# === Entornos virtuales ===
+.venv/
+venv/
+env/
+
+# === Datos crudos y pesados (NO subir a GitHub) ===
+data_raw/
+data/
+*.sigmf-data
+*.sigmf-meta
+
+# === Modelos / pesos de red neuronal (demasiado grandes) ===
+*.pth
+*.pt
+*.onnx
+*.ckpt
+*.h5
+*.zip
+
+# === Resultados pesados (descomenta si quieres excluirlos) ===
+# resultados/modelos/
+
+# === Editor / sistema ===
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# === LaTeX (archivos compilados) ===
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot

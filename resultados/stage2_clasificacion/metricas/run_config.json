@@ -1,0 +1,40 @@
+{
+  "csv": "data\\stage2_classifier_v2_mavic_split\\metadata\\spectrograms_stage2_mavic_split.csv",
+  "data_root": ".",
+  "artifacts_dir": "data\\stage2_classifier_v2_mavic_split\\artifacts\\resnet18_stage2_mavic_split",
+  "train_csv": null,
+  "val_csv": null,
+  "test_csv": null,
+  "splits_dir": null,
+  "epochs": 12,
+  "batch_size": 32,
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "freeze_backbone": 3,
+  "image_size": 224,
+  "seed": 42,
+  "num_workers": 0,
+  "no_freq_normalize": false,
+  "power_ablation": false,
+  "no_eval_test": false,
+  "classes": [
+    "f450",
+    "hunter",
+    "mavic_video",
+    "mavic_novideo",
+    "mini3",
+    "interference"
+  ],
+  "class_to_idx": {
+    "f450": 0,
+    "hunter": 1,
+    "mavic_video": 2,
+    "mavic_novideo": 3,
+    "mini3": 4,
+    "interference": 5
+  },
+  "train_csv_used": "data\\stage2_classifier_v2_mavic_split\\artifacts\\resnet18_stage2_mavic_split\\splits\\train.csv",
+  "val_csv_used": "data\\stage2_classifier_v2_mavic_split\\artifacts\\resnet18_stage2_mavic_split\\splits\\val.csv",
+  "test_csv_used": "data\\stage2_classifier_v2_mavic_split\\artifacts\\resnet18_stage2_mavic_split\\splits\\test.csv",
+  "freq_normalize": true
+}

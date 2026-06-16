@@ -1,0 +1,36 @@
+% =============================================================================
+% Informe de los tutores (plantilla oficial ETSIIT UGR).
+% Si solo tienes un tutor, elimina las lineas del segundo.
+% =============================================================================
+
+\thispagestyle{empty}
+
+\vspace*{2cm}
+\noindent D. \textbf{\tfgtutorA}, Profesor del Area de XXXX del Departamento YYYY de la Universidad de Granada.
+
+\ifx\tfgtutorB\empty\else
+  \vspace{0.4cm}
+  \noindent D. \textbf{\tfgtutorB}, Profesor del Area de XXXX del Departamento YYYY de la Universidad de Granada.
+\fi
+
+\vspace{0.8cm}
+\noindent\textbf{Informa\ifx\tfgtutorB\empty\else n\fi:}
+
+\vspace{0.4cm}
+\noindent Que el presente trabajo, titulado \emph{\tfgtitulo, \tfgsubtitulo}, ha sido realizado bajo su supervision por \textbf{\tfgautor}, y autoriza\ifx\tfgtutorB\empty\else n\fi\ la defensa de dicho trabajo ante el tribunal que corresponda.
+
+\vspace{0.6cm}
+\noindent Y para que conste, expide\ifx\tfgtutorB\empty\else n\fi\ y firma\ifx\tfgtutorB\empty\else n\fi\ el presente informe en Granada a X de \tfgmes\ de \tfganio.
+
+\vspace{2.5cm}
+\noindent
+\ifx\tfgtutorB\empty
+  El director:\\[1cm]
+  \tfgtutorA
+\else
+  Los directores:\\[1cm]
+  \begin{minipage}{0.45\textwidth}\centering \tfgtutorA \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}\centering \tfgtutorB \end{minipage}
+\fi
+
+\cleardoublepage

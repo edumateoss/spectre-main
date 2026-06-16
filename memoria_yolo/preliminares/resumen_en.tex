@@ -1,0 +1,29 @@
+% =============================================================================
+% Abstract en ingles.
+% =============================================================================
+
+\thispagestyle{empty}
+
+\selectlanguage{english}
+
+\noindent\textbf{\tfgtitulo}\\
+\tfgsubtitulo.\\[0.4cm]
+
+\noindent\tfgautor\\[0.6cm]
+
+\noindent\textbf{Keywords}: drone detection, radio frequency, SDR, SigMF, spectrograms, STFT, YOLOv8, object detection, OcuSync, Bluetooth, WiFi, FHSS, ResNet18.
+
+\vspace{0.6cm}
+\section*{Abstract}
+
+This Bachelor's Thesis addresses the detection of commercial drones through the analysis of radio-frequency signals acquired with software-defined radio receivers. The work focuses on the \SI{2.4}{\giga\hertz} ISM band, where drone communication links coexist with widely deployed technologies such as WiFi and Bluetooth. In this context, the problem is not only to detect spectral energy, but to locate and classify time-frequency structures compatible with a drone signature among other signals present in the same band.
+
+The proposed methodology is reformulated as a two-stage system. In the first stage, IQ samples acquired with a USRP receiver are stored in SigMF format, segmented into \SI{0.1}{\second} windows and converted into spectrograms using the Short-Time Fourier Transform. A YOLOv8 object detector is then trained on these spectrograms to localize FHSS bursts and classify them as \emph{drone} or \emph{interference}. This object-detection approach replaces the previous full-image binary classifier, since it encourages the model to learn the local morphology of the bursts and reduces the risk of learning contextual biases from the acquisition scenario. The second stage, based on a ResNet18 network, identifies the specific drone model from the regions already filtered by the first stage.
+
+The most relevant result of the first stage is that the detector shows no cross-confusion between the active classes \emph{drone} and \emph{interference}: whenever it produces a positive prediction over a spectrogram region, the assigned class is correct, and the errors are limited to false negatives towards \emph{background}. Although the per-burst recall is moderate (global precision of 0.760, recall of 0.391 and mAP@50 of 0.388 on the test split, with per-class mAP@50 of 0.575 for \emph{drone} versus 0.201 for \emph{interference}), the temporal redundancy of the OcuSync protocol ---tens of bursts per \SI{0.1}{\second} window--- allows the drone presence to be confirmed at the image level with a recall of \SI{91}{\percent}, keeping precision and specificity at 1.000, without a single false positive over the 600 test images.
+
+The second stage identifies the DJI Mini~3 ---the reference platform of this work--- with an F1 score of 0.992, almost without errors. A noise-robustness sweep further shows that the network's decision relies on the spectro-temporal morphology of the bursts rather than on their average power level: for the same injected power, white noise that covers the whole time-frequency plane degrades the classifier much earlier than a frequency-hopping interference, which only occupies a small fraction of the plane. Finally, the detector trained solely on the DJI Mini~3 localizes, without any retraining, the bursts of other drones unseen during training (DJI F450 and Mavic~Pro, using the OcuSync~v1 protocol), confirming that the learned feature is the generic FHSS morphology and not the signature of a specific model. These results are obtained on captures under controlled conditions; their validation in more diverse deployment scenarios is left as future work.
+
+\selectlanguage{spanish}
+
+\cleardoublepage

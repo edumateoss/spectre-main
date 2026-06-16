@@ -1,0 +1,43 @@
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sleep infinity
+    depends_on:
+      - mlflow
+    volumes:
+      - ../..:/workspaces:cached
+      - /mnt/d/datasets/rfuav:/datasets:ro
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.10.1
+    command:
+      - mlflow
+      - server
+      - --host
+      - 0.0.0.0
+      - --port
+      - "5000"
+      - --backend-store-uri
+      - sqlite:///mlflow.db
+      - --default-artifact-root
+      - /mlflow/artifacts
+      - --allowed-hosts
+      - "*"
+    ports:
+      - "5001:5000"
+    volumes:
+      - mlflow-artifacts:/mlflow/artifacts
+
+volumes:
+  mlflow-artifacts:

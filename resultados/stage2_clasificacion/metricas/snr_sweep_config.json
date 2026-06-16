@@ -1,0 +1,30 @@
+{
+  "model_path": "data\\stage2_classifier_v2_mavic_split\\artifacts\\resnet18_stage2_mavic_split\\best_model.pth",
+  "test_csv": "data\\stage2_classifier_v2_mavic_split\\artifacts\\resnet18_stage2_mavic_split\\splits\\test.csv",
+  "sigmf_root": "data_raw\\sigmf",
+  "output_dir": "data\\stage2_classifier_v2_mavic_split\\artifacts\\snr_sweep",
+  "noise_types": [
+    "awgn",
+    "fhss"
+  ],
+  "snr_list_db": [
+    "inf",
+    "+20",
+    "+15",
+    "+10",
+    "+5",
+    "+0",
+    "-5",
+    "-10",
+    "-15",
+    "-20"
+  ],
+  "segment_duration_s": 0.1,
+  "image_size": 224,
+  "freq_normalize": true,
+  "render_mode": "fast",
+  "quick_check": false,
+  "n_test_samples": 941,
+  "seed": 42,
+  "device": "cuda"
+}

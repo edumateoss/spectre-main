@@ -1,0 +1,56 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python + MLflow",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
+	"dockerComposeFile": "compose.yaml",
+	"service": "main",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+	// "mounts": [
+	// 	"target=${containerWorkspaceFolder}/.venv,type=volume"
+	// ],
+	"containerEnv": {
+		"UV_PROJECT_ENVIRONMENT": "/home/vscode/.venvs/${localWorkspaceFolderBasename}"
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		// "ghcr.io/devcontainers/features/python:1": {
+		// 	"version": "3.14",
+		// 	"installTools": false
+		// },
+		"ghcr.io/devcontainers-extra/features/uv:1": {
+			"version": "0.11.1"
+		},
+		"ghcr.io/devcontainers/features/rust:1": {
+			"version": "1.94.1"
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "uv sync --all-groups",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"tamasfe.even-better-toml",
+				"charliermarsh.ruff"
+			],
+			"settings": {
+				// "python.defaultInterpreterPath": "/opt/venvs/${localWorkspaceFolderBasename}/bin/python"
+				"python.defaultInterpreterPath": "/home/vscode/.venvs/${localWorkspaceFolderBasename}/bin/python"
+			}
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

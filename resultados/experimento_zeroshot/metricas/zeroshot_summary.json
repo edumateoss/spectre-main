@@ -1,0 +1,25 @@
+{
+  "conf": 0.1,
+  "k": 1,
+  "referencia_v3_recall_pct": 99.0,
+  "por_tipo": {
+    "f450": {
+      "n_imagenes": 224,
+      "n_detectado": 224,
+      "recall_presencia_pct": 100.0,
+      "avg_cajas_drone_por_imagen": 11.5
+    },
+    "hunter": {
+      "n_imagenes": 788,
+      "n_detectado": 4,
+      "recall_presencia_pct": 0.5,
+      "avg_cajas_drone_por_imagen": 0.0
+    },
+    "mavic": {
+      "n_imagenes": 874,
+      "n_detectado": 823,
+      "recall_presencia_pct": 94.2,
+      "avg_cajas_drone_por_imagen": 10.2
+    }
+  }
+}

@@ -14,7 +14,8 @@ env/
 
 # === Datos crudos y pesados (NO subir a GitHub) ===
 data_raw/
-data/
+data/*
+!data/README.md
 *.sigmf-data
 *.sigmf-meta
 

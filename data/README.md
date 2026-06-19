@@ -16,10 +16,4 @@ data/
 ## Descarga
 
 Los *datasets* y los pesos del clasificador ResNet18 de la segunda etapa están
-disponibles en: `<ENLACE_DRIVE>`
-
-Las capturas IQ en bruto (carpeta `data_raw/`, formato SigMF) se entregan como
-ficheros asociados a la memoria o están disponibles bajo petición.
-
-El peso del detector YOLOv8n de la primera etapa sí está incluido en el
-repositorio, en `resultados/modelos/yolo_stage1_best.pt`.
+disponibles en el enlace facilitado: https://atcdatos.ugr.es/index.php/s/xcOo6TT3ErYyTu3?path=%2F

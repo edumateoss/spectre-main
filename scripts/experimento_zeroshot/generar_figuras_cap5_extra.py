@@ -1,6 +1,6 @@
 """
 Genera figuras adicionales del Capitulo 5:
-  1. Distribucion de rafagas detectadas por imagen (n_drone_bboxes)
+  1. Distribución de ráfagas detectadas por imagen (n_drone_bboxes)
   2. Curvas de aprendizaje Stage 2 clasificador 6 clases
   3. Panel de matrices de confusion a distintos SNR (AWGN vs FHSS)
 
@@ -14,7 +14,7 @@ import matplotlib.ticker as mticker
 import numpy as np
 import pandas as pd
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT  = os.path.join(ROOT, "memoria_yolo", "figuras", "resultados")
 os.makedirs(OUT, exist_ok=True)
 
@@ -55,9 +55,9 @@ CLASES_6 = ["F450", "Hunter", "Mavic\nvideo", "Mavic\nno video", "Mini 3", "Inte
 
 
 # ===========================================================================
-# 1. Distribucion de rafagas por imagen
+# 1. Distribución de ráfagas por imagen
 # ===========================================================================
-def plot_rafagas_por_imagen():
+def plot_ráfagas_por_imagen():
     df = pd.read_csv(PER_IMAGE_CSV)
 
     # Separar por tipo de captura
@@ -76,9 +76,9 @@ def plot_rafagas_por_imagen():
     ax.hist(d5,  bins=bins, alpha=0.75, color=AZUL, label="Dron 5 m / WiFi W1",  edgecolor="white")
     ax.hist(d10, bins=bins, alpha=0.75, color=ROJO, label="Dron 10 m / WiFi W3", edgecolor="white")
     ax.axvline(3, color=GRIS, lw=1.2, linestyle=":", label="Umbral K=3")
-    ax.set_xlabel("Rafagas drone detectadas por ventana (0,1 s)")
-    ax.set_ylabel("Numero de imagenes")
-    ax.set_title("Distribucion de detecciones en capturas de dron")
+    ax.set_xlabel("Ráfagas drone detectadas por ventana (0,1 s)")
+    ax.set_ylabel("Número de imágenes")
+    ax.set_title("Distribución de detecciones en capturas de dron")
     ax.legend()
 
     # --- Medias y percentiles como tabla visual ---
@@ -105,7 +105,7 @@ def plot_rafagas_por_imagen():
     ax2.axhline(3, color=GRIS, lw=1.2, linestyle=":", label="Umbral K=3")
     ax2.set_xticks(x)
     ax2.set_xticklabels(etiquetas, fontsize=9.5)
-    ax2.set_ylabel("Rafagas drone por ventana (media ± IQR)")
+    ax2.set_ylabel("Ráfagas drone por ventana (media ± IQR)")
     ax2.set_title("Media de detecciones por tipo de captura")
     ax2.legend()
 
@@ -114,7 +114,7 @@ def plot_rafagas_por_imagen():
         ax2.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.3,
                  f"{m:.1f}", ha="center", va="bottom", fontsize=10, fontweight="bold")
 
-    fig.suptitle("Rafagas detectadas por ventana de 0,1 s — detector YOLO (conf ≥ 0,10)", y=1.01)
+    fig.suptitle("Ráfagas detectadas por ventana de 0,1 s — detector YOLO (conf ≥ 0,10)", y=1.01)
     fig.tight_layout()
     path = os.path.join(OUT, "yolo_rafagas_por_imagen.png")
     fig.savefig(path)
@@ -136,20 +136,20 @@ def plot_stage2_learning_curves():
     # --- Loss ---
     ax = axes[0]
     ax.plot(epochs, train["loss"], color=AZUL, lw=1.8, label="Entrenamiento")
-    ax.plot(epochs, val["loss"],   color=ROJO, lw=1.8, linestyle="--", label="Validacion")
-    ax.axvline(10, color=GRIS, lw=1.0, linestyle=":", label="Mejor epoca (10)")
-    ax.set_xlabel("Epoca")
-    ax.set_ylabel("Perdida (cross-entropy)")
-    ax.set_title("Perdida")
+    ax.plot(epochs, val["loss"],   color=ROJO, lw=1.8, linestyle="--", label="Validación")
+    ax.axvline(10, color=GRIS, lw=1.0, linestyle=":", label="Mejor época (10)")
+    ax.set_xlabel("Época")
+    ax.set_ylabel("Pérdida (cross-entropy)")
+    ax.set_title("Pérdida")
     ax.legend()
     ax.set_xlim(1, max(epochs))
 
     # --- F1 macro ---
     ax = axes[1]
     ax.plot(epochs, train["f1_macro"], color=AZUL, lw=1.8, label="Entrenamiento")
-    ax.plot(epochs, val["f1_macro"],   color=ROJO, lw=1.8, linestyle="--", label="Validacion")
-    ax.axvline(10, color=GRIS, lw=1.0, linestyle=":", label="Mejor epoca (10)")
-    ax.set_xlabel("Epoca")
+    ax.plot(epochs, val["f1_macro"],   color=ROJO, lw=1.8, linestyle="--", label="Validación")
+    ax.axvline(10, color=GRIS, lw=1.0, linestyle=":", label="Mejor época (10)")
+    ax.set_xlabel("Época")
     ax.set_ylabel("F1 macro")
     ax.set_title("F1 macro")
     ax.legend()
@@ -230,10 +230,10 @@ def plot_snr_confusion_panel():
     cbar_ax = fig.add_axes([0.90, 0.15, 0.015, 0.7])
     sm = plt.cm.ScalarMappable(cmap="Blues", norm=plt.Normalize(vmin=0, vmax=1))
     sm.set_array([])
-    fig.colorbar(sm, cax=cbar_ax).set_label("Fraccion de muestras", fontsize=9)
+    fig.colorbar(sm, cax=cbar_ax).set_label("Fracción de muestras", fontsize=9)
 
     fig.suptitle(
-        "Evolucion de la matriz de confusion con el SNR\n"
+        "Evolución de la matriz de confusión con el SNR\n"
         "Fila superior: AWGN — Fila inferior: FHSS-like",
         fontsize=11, y=1.01)
 
@@ -248,7 +248,7 @@ def plot_snr_confusion_panel():
 # ===========================================================================
 if __name__ == "__main__":
     print("Generando figuras adicionales del Capitulo 5...")
-    plot_rafagas_por_imagen()
+    plot_ráfagas_por_imagen()
     plot_stage2_learning_curves()
     plot_snr_confusion_panel()
     print("Listo.")

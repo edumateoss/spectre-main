@@ -3,9 +3,9 @@ Figura limpia de la evolucion del entrenamiento YOLOv8 para la memoria.
 
 Reduce la rejilla de 10 paneles que genera Ultralytics (results.png) a tres
 paneles que sostienen directamente el texto del capitulo:
-  1. Perdidas de entrenamiento (box, cls, dfl): descienden de forma continua.
-  2. Precision y Recall de validacion: plateau aproximado entre epocas 20 y 30.
-  3. mAP@50 y mAP@50-95 de validacion: plateau con leve mejora del mAP@50-95.
+  1. Pérdidas de entrenamiento (box, cls, dfl): descienden de forma continua.
+  2. Precisión y Recall de validación: plateau aproximado entre epocas 20 y 30.
+  3. mAP@50 y mAP@50-95 de validación: plateau con leve mejora del mAP@50-95.
 
 Uso:
     uv run python scripts/plot_yolo_results_clean.py
@@ -90,16 +90,16 @@ def main():
     plot_series(ax, ep, d["train/box_loss"], "#1f77b4", "box")
     plot_series(ax, ep, d["train/cls_loss"], "#ff7f0e", "cls")
     plot_series(ax, ep, d["train/dfl_loss"], "#2ca02c", "dfl")
-    ax.set_title("Perdidas de entrenamiento", fontsize=10)
-    ax.set_xlabel("Epoca")
-    ax.set_ylabel("Perdida")
+    ax.set_title("Pérdidas de entrenamiento", fontsize=10)
+    ax.set_xlabel("Época")
+    ax.set_ylabel("Pérdida")
     ax.legend(fontsize=8, frameon=False)
 
     ax = axes[1]
-    plot_series(ax, ep, d["metrics/precision(B)"], "#1f77b4", "Precision")
+    plot_series(ax, ep, d["metrics/precision(B)"], "#1f77b4", "Precisión")
     plot_series(ax, ep, d["metrics/recall(B)"], "#d62728", "Recall")
-    ax.set_title("Precision y Recall (validacion)", fontsize=10)
-    ax.set_xlabel("Epoca")
+    ax.set_title("Precisión y Recall (validación)", fontsize=10)
+    ax.set_xlabel("Época")
     ax.set_ylabel("Valor")
     ax.set_ylim(0, 1)
     ax.legend(fontsize=8, frameon=False, loc="center right")
@@ -107,8 +107,8 @@ def main():
     ax = axes[2]
     plot_series(ax, ep, d["metrics/mAP50(B)"], "#9467bd", "mAP@50")
     plot_series(ax, ep, d["metrics/mAP50-95(B)"], "#8c564b", "mAP@50-95")
-    ax.set_title("mAP (validacion)", fontsize=10)
-    ax.set_xlabel("Epoca")
+    ax.set_title("mAP (validación)", fontsize=10)
+    ax.set_xlabel("Época")
     ax.set_ylabel("Valor")
     ax.legend(fontsize=8, frameon=False, loc="center right")
 

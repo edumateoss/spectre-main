@@ -3,7 +3,7 @@ Genera las figuras del Capitulo 5 que no existen todavia:
   1. Curvas de aprendizaje ResNet18 binario (loss y F1 train/val vs epoch)
   2. Heatmap de recall del sweep de presencia (conf x K)
   3. Barras de deteccion por captura en el punto operativo recomendado
-  4. Matriz de confusion normalizada del clasificador Stage 2 (6 clases)
+  4. Matriz de confusión normalizada del clasificador Stage 2 (6 clases)
 
 Salidas en: memoria_yolo/figuras/resultados/
 """
@@ -19,7 +19,7 @@ import pandas as pd
 # ---------------------------------------------------------------------------
 # Rutas
 # ---------------------------------------------------------------------------
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT  = os.path.join(ROOT, "memoria_yolo", "figuras", "resultados")
 os.makedirs(OUT, exist_ok=True)
 
@@ -63,11 +63,11 @@ def plot_learning_curves():
     # --- Loss ---
     ax = axes[0]
     ax.plot(epochs, train["loss"], color=AZUL,  lw=1.8, label="Entrenamiento")
-    ax.plot(epochs, val["loss"],   color=ROJO,  lw=1.8, linestyle="--", label="Validacion")
-    ax.axvline(5, color=GRIS, lw=1.0, linestyle=":", label="Mejor epoca (5)")
-    ax.set_xlabel("Epoca")
-    ax.set_ylabel("Perdida (cross-entropy)")
-    ax.set_title("Perdida")
+    ax.plot(epochs, val["loss"],   color=ROJO,  lw=1.8, linestyle="--", label="Validación")
+    ax.axvline(5, color=GRIS, lw=1.0, linestyle=":", label="Mejor época (5)")
+    ax.set_xlabel("Época")
+    ax.set_ylabel("Pérdida (cross-entropy)")
+    ax.set_title("Pérdida")
     ax.legend()
     ax.set_xlim(1, max(epochs))
     ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("%.3f"))
@@ -75,9 +75,9 @@ def plot_learning_curves():
     # --- F1 ---
     ax = axes[1]
     ax.plot(epochs, train["f1"], color=AZUL, lw=1.8, label="Entrenamiento")
-    ax.plot(epochs, val["f1"],   color=ROJO, lw=1.8, linestyle="--", label="Validacion")
-    ax.axvline(5, color=GRIS, lw=1.0, linestyle=":", label="Mejor epoca (5)")
-    ax.set_xlabel("Epoca")
+    ax.plot(epochs, val["f1"],   color=ROJO, lw=1.8, linestyle="--", label="Validación")
+    ax.axvline(5, color=GRIS, lw=1.0, linestyle=":", label="Mejor época (5)")
+    ax.set_xlabel("Época")
     ax.set_ylabel("F1")
     ax.set_title("F1")
     ax.legend()
@@ -117,9 +117,9 @@ def plot_presencia_heatmap():
     ax.set_xticklabels([f"K={k}" for k in ks])
     ax.set_yticks(range(len(confs)))
     ax.set_yticklabels([f"conf={c}" for c in confs])
-    ax.set_xlabel("Minimo de rafagas requeridas (K)")
+    ax.set_xlabel("Mínimo de ráfagas requeridas (K)")
     ax.set_ylabel("Umbral de confianza")
-    ax.set_title("Recall de presencia (%) — Precision y Especificidad = 1,00 en todas las celdas")
+    ax.set_title("Recall de presencia (%) — Precisión y Especificidad = 1,00 en todas las celdas")
 
     # Anotar valores
     for i in range(len(confs)):
@@ -191,7 +191,7 @@ def plot_presencia_por_captura():
 
     ax.set_ylabel("Ventanas con dron detectado (%)")
     ax.set_ylim(0, 115)
-    ax.set_title("Deteccion de presencia por captura\n(conf = 0,10 ; K = 3 rafagas minimas)")
+    ax.set_title("Detección de presencia por captura\n(conf = 0,10 ; K = 3 ráfagas mínimas)")
     ax.set_yticks([0, 25, 50, 75, 100])
 
     # Leyenda manual
@@ -210,7 +210,7 @@ def plot_presencia_por_captura():
 
 
 # ===========================================================================
-# 4. Matriz de confusion normalizada Stage 2 (6 clases)
+# 4. Matriz de confusión normalizada Stage 2 (6 clases)
 # ===========================================================================
 def plot_confusion_matrix_stage2():
     df = pd.read_csv(CM_CSV, index_col=0)
@@ -234,7 +234,7 @@ def plot_confusion_matrix_stage2():
     ax.set_yticklabels(etiquetas, fontsize=10)
     ax.set_xlabel("Clase predicha")
     ax.set_ylabel("Clase real")
-    ax.set_title("Matriz de confusion normalizada — Clasificador Stage 2 (6 clases)")
+    ax.set_title("Matriz de confusión normalizada — Clasificador Stage 2 (6 clases)")
 
     for i in range(len(etiquetas)):
         for j in range(len(etiquetas)):
@@ -244,7 +244,7 @@ def plot_confusion_matrix_stage2():
                     fontsize=9.5, color=color)
 
     cbar = fig.colorbar(im, ax=ax, shrink=0.85)
-    cbar.set_label("Fraccion de muestras")
+    cbar.set_label("Fracción de muestras")
 
     fig.tight_layout()
     path = os.path.join(OUT, "stage2_confusion_matrix_norm.png")

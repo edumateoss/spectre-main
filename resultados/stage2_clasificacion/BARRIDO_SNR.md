@@ -31,7 +31,7 @@ Pregunta de investigación: ¿la red ha aprendido la huella morfológica de los 
 
 ## 3. Implementación
 
-Cuatro scripts nuevos en `scripts/` y una sección añadida a `CLAUDE.md`.
+Cuatro scripts nuevos en `scripts/`.
 
 ### 3.1 `scripts/snr_noise.py`
 

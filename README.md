@@ -10,10 +10,6 @@ tiempo-frecuencia de la banda de 2,4 GHz, capturados con un SDR USRP B210.
 ## Estructura del repositorio
 
 ```
-spectre-main/
-├── MEMORIA_v2.pdf                   # Memoria del TFG (versión final entregada)
-├── memoria_yolo/                    # Fuente LaTeX de la memoria (compilar en Overleaf)
-│
 ├── scripts/                         # Código fuente organizado por etapa
 │   ├── common.py                    # Utilidades compartidas (FrequencyNormalize, etc.)
 │   ├── snr_noise.py                 # Inyección de ruido AWGN y FHSS sintético

@@ -1,7 +1,7 @@
 PESOS DE LOS MODELOS - TFG Spectre (Eduardo Mateos Ruiz)
 ========================================================
 
-Esta carpeta reune los pesos de los modelos entrenados que se describen
+Esta carpeta debe reunir los pesos de los modelos entrenados que se describen
 en la memoria. Se entregan aparte del repositorio de GitHub por su tamano
 (el .gitignore excluye los ficheros .pt y .pth).
 
@@ -26,8 +26,3 @@ Ficheros
    Memoria: experimento P1 (Capitulo 5).
    Origen: data/mini3_detector_python_v3/artifacts/best_model.pth
 
-Reproducibilidad
-----------------
-El codigo para cargar y evaluar estos modelos esta en el repositorio:
-https://github.com/edumateoss/spectre-main
-Las instrucciones y dependencias estan en el README del repositorio.

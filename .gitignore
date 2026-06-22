@@ -48,5 +48,4 @@ Thumbs.db
 *.lof
 *.lot
 
-# Config de herramientas de IA
-.claude/
+

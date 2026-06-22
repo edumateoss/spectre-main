@@ -1,7 +1,7 @@
 # Carpeta de datos (no incluida en el repositorio)
 
 Los *datasets* de espectrogramas y los artefactos de entrenamiento no se suben a
-GitHub por su tamaño (varios GB). Esta carpeta documenta la estructura esperada
+este repositorio. Esta carpeta documenta la estructura esperada
 para reproducir los experimentos; el contenido se descarga aparte.
 
 ## Estructura esperada

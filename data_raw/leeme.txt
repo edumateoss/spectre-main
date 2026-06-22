@@ -1,23 +1,19 @@
+Esta carpeta debe contener las capturas de señal en bruto (muestras IQ en formato
+SigMF)
 
-Esta carpeta NO contiene los datos en el repositorio de GitHub.
-Los datasets de espectrogramas y los pesos de los modelos son
-demasiado grandes para subirlos aqui (varios GB), por lo que se
-distribuyen aparte y deben descargarse para poder ejecutar el
-proyecto.
+IMPORTANTE: estos datos son OPCIONALES. NO hacen falta para
+entrenar ni evaluar el sistema sobre los espectrogramas ya
+generados (esos van en "data.zip"). Solo se necesitan si se quiere:
+  - regenerar los espectrogramas desde cero a partir del IQ, o
+  - ejecutar el barrido de SNR / el zero-shot directamente desde
+    la senal SigMF.
 
---------------------------------------------------------------------
-COMO OBTENER LOS DATOS
---------------------------------------------------------------------
+Para obtener los datos:
 
-1) Descarga el fichero "data.zip" desde:
+1) Descarga el fichero "data_raw.zip" desde:
 
       https://atcdatos.ugr.es/index.php/s/xcOo6TT3ErYyTu3?path=%2F
 
 2) Descomprimelo en la RAIZ del proyecto, de modo que quede:
 
-      spectre-main/data/...
-
-
-Una vez descomprimido, todas las rutas que usan los scripts quedan
-en su sitio automaticamente, incluidos los pesos de los modelos,
-que ya van dentro de sus carpetas "artifacts/".
+      spectre-main/data_raw/...

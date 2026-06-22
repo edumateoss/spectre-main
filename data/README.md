@@ -17,3 +17,7 @@ data/
 
 Los *datasets* y los pesos del clasificador ResNet18 de la segunda etapa están
 disponibles en el enlace facilitado: https://atcdatos.ugr.es/index.php/s/xcOo6TT3ErYyTu3?path=%2F
+
+**Nota:** los ficheros `mini3_detector_python_v3/yolo/data.yaml` y `train/val/test.txt`
+usan rutas absolutas a la máquina original. Para ejecutar el detector en otra
+ubicación, ajusta el campo `path:` de `data.yaml` a tu carpeta `data/`

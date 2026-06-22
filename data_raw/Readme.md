@@ -9,9 +9,8 @@ Esta carpeta debe contener las capturas de señal en bruto (muestras IQ en forma
 
 ## Para obtener los datos
 
-1. Descarga el fichero `data_raw.zip` desde:
+1. Descarga el fichero `data_raw.zip` desde el enlace facilitado al tribunal:
 
-   <https://atcdatos.ugr.es/index.php/s/xcOo6TT3ErYyTu3?path=%2F>
 
 2. Descomprímelo en la **raíz del proyecto**, de modo que quede:
 
